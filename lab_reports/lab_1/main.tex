@@ -65,10 +65,16 @@
 \section{Experiment 1: Resistance Measurement}
 	\subsection{Results}
 	% Elias - Make a plot showing both the measured data (as individual points) and the theoretical fit (as a solid line) along with the extracted resistance value.
-	\begin{figure}[h]
+	For our first method of measuring our resistor, we looked at the color code on the resistor which showed that it had a resistance of 1.5 k$\Omega$ with a 5\% tolerance. For our second method, we used the
+    Keithley 2400 SourceMeter to measure the resistance of the resistor and found it to be 1.48377 k$\Omega$. 
+    For our third method, we used the SMU to measure the current through the resistor at different voltages and plotted the current-voltage characteristic of the resistor. 
+    We then used MATLAB's polyfit() function to create a linear fit on this data. We found the resistance value from the slope of the line, which was approximately 1.485
+     k$\Omega$. The data with fit can be seen in Figure~\ref{fig:exp2_plot}.
+
+    \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{../../lab_code/matlab/exp1_plot.pdf}
-    \caption{.}\label{fig:exp2_plot}
+    \caption{Current–voltage characteristic of the resistor measured with the SMU, with a linear fit used to extract the resistance from the SMU data.}\label{fig:exp2_plot}
     \end{figure}
 
     \subsection{Analysis}
