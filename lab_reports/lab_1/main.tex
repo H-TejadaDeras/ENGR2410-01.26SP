@@ -21,6 +21,7 @@
 %% Draft watermark
 % \usepackage{draftwatermark}
 
+\usepackage{graphicx}
 %----------------------------------------------------------
 % TITLE
 %----------------------------------------------------------
@@ -47,7 +48,7 @@
 \institution{Franklin W. Olin College of Engineering}
 \footinfo{Intro Microelectronic Circuits with Laboratory}
 \theday{February 9, 2026}
-\leadauthor{Tuthill et. al.}
+\leadauthor{Tuthill et.al.}
 
 %----------------------------------------------------------
 
@@ -64,7 +65,13 @@
 \section{Experiment 1: Resistance Measurement}
 	\subsection{Results}
 	% Elias - Make a plot showing both the measured data (as individual points) and the theoretical fit (as a solid line) along with the extracted resistance value.
-	\subsection{Analysis}
+	\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../../lab_code/matlab/exp1_plot.pdf}
+    \caption{.}\label{fig:exp2_plot}
+    \end{figure}
+
+    \subsection{Analysis}
 	% Henry - Comment on any discrepancies and suggest possible explanations for them.
 	\subsection{Discussion}
     The nominal resistance value of the resistor was 1.5k$\Omega$ with a 5\% tolerance. The resistance measured by the SourceMeter was 1.48377 k$\Omega$, which has a percent error of 1.08\% which is less than the 5\% tolerance. However the SourceMeter is still subject to a small error rate because while it aims to approximate an ideal voltmeter, it will not truly be infinite resistance. Additionally the resistor itself is subject to a small error rate because of the manufacturing process. In the curve fit plot, the value is likely more accurate because it is based on multiple values of voltage and current. However, there is still some error because of inaccuracy in measurements and the small resistance in wires. However the fact that the value by the SourceMeter is similar to the value from the curve fit plot suggests that both these methods result in a value that is close to the true resistance of the resistor
