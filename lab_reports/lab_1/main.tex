@@ -71,23 +71,57 @@
     We then used MATLAB's polyfit() function to create a linear fit on this data. We found the resistance value from the slope of the line, which was approximately 1.485
      k$\Omega$. The data with fit can be seen in Figure~\ref{fig:exp2_plot}.
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{../../lab_code/matlab/Lab1/exp1_plot.pdf}
-    \caption{Current–voltage characteristic of the resistor measured with the SMU, with a linear fit used to extract the resistance from the SMU data.}\label{fig:exp2_plot}
-    \end{figure}
+	\begin{figure}[h]
+ 		\centering
+   		\includegraphics[width=\linewidth]{../../lab_code/matlab/Lab1/exp1_plot.pdf}
+   		\caption{Current–voltage characteristic of the resistor measured with the SMU, with a linear fit used to extract the resistance from the SMU data.}
+		\label{fig:exp1_plot}
+    	\end{figure}
 
-    \subsection{Analysis}
+    	\subsection{Analysis}
 	% Henry - Comment on any discrepancies and suggest possible explanations for them.
+	The resistance calculated via the line of best fit from the SMU data was off by about 0.002 k$\Omega$ from the resistance measured by the SourceMeter. The main reason for this discrepancy is the measurement resolution provided by the SMU. The SMU can accurately measure voltages up to a 18 bits resolution (\textasciitilde5.4 digits), which means that the last number is unreliable (each voltage measurement had 4 digits after the decimal point and one digit before it, which makes for a total of 5 digits) because the last digit is affected by the rounding up and down of the remaining\textasciitilde0.4 digits of information. Another possible reason for this discrepancy comes from how we placed the resistor on the breadboard. The rails in the breadboard itself have some resistance, which would have slightly dropped the voltage across the resistor (which we use to measure the resistance using Ohm's law) and, by extension, affected the resistance measurement from the SMU.
 	\subsection{Discussion}
-    The nominal resistance value of the resistor was 1.5k$\Omega$ with a 5\% tolerance. The resistance measured by the SourceMeter was 1.48377 k$\Omega$, which has a percent error of 1.08\% which is less than the 5\% tolerance. However the SourceMeter is still subject to a small error rate because while it aims to approximate an ideal voltmeter, it will not truly be infinite resistance. Additionally the resistor itself is subject to a small error rate because of the manufacturing process. In the curve fit plot, the value is likely more accurate because it is based on multiple values of voltage and current. However, there is still some error because of inaccuracy in measurements and the small resistance in wires. However the fact that the value by the SourceMeter is similar to the value from the curve fit plot suggests that both these methods result in a value that is close to the true resistance of the resistor
-    % Anika - Which technique do you think is the most accurate? Why?
-	tmp below...
-	Color Code Resistance Value: 1.5 k$\Omega$ with a 5\% tolerance. Keithley Measured Resistance Value: 1.48377 k$\Omega$
+    	% Anika - Which technique do you think is the most accurate? Why?
+	The nominal resistance value of the resistor was 1.5k$\Omega$ with a 5\% tolerance. The resistance measured by the SourceMeter was 1.48377 k$\Omega$, which has a percent error of 1.08\% which is less than the 5\% tolerance. However the SourceMeter is still subject to a small error rate because while it aims to approximate an ideal voltmeter, it will not truly be infinite resistance. Additionally the resistor itself is subject to a small error rate because of the manufacturing process. In the curve fit plot, the value is likely more accurate because it is based on multiple values of voltage and current. However, there is still some error because of inaccuracy in measurements and the small resistance in wires. However the fact that the value by the SourceMeter is similar to the value from the curve fit plot suggests that both these methods result in a value that is close to the true resistance of the resistor
+	% tmp below...
+	% Color Code Resistance Value: 1.5 k$\Omega$ with a 5\% tolerance. Keithley Measured Resistance Value: 1.48377 k$\Omega$
 
 \section{Experiment 2: Resistive Voltage Division}
 	\subsection{Results}
 	% Henry - Within a single chip, how do the resistances match each other compared to the ±2% tolerance specified for their absolute values? How do the resistance values on one chip compare to those on the second chip? In your report, include a table showing all of the resistor values from both chips. Make a plot showing both the measured data and the theoretical fit along with the extracted value of the divider ratio.
+	The following data was measured from two Bourns 4116R-1-103LF DIP chip resistors, in which resistor measurements 1-8 are from the first chip and measurements 9-16 are from the other chip. The measurements were made using a Keithley 2400 SourceMeter. The average resistance of the first chip was 9.9552125 k$\Omega$ and was 9.9554875 k$\Omega$ for the second chip. The standard deviation for the first chip was 0.009909 k$\Omega$ and 0.005610 k$\Omega$ for the second chip. While there was more variation in the first chip than in the second one, the variation was still within the $\pm$2\% tolerance.
+	\begin{table}[H]
+        	\centering
+	        \begin{tabular}{ccc}
+			\textbf{Resistor} & \textbf{Resistance Measurement}\\
+			1 & 9.9724 k$\Omega$\\
+			2 & 9.9661 k$\Omega$\\
+			3 & 9.9465 k$\Omega$\\
+			4 & 9.9510 k$\Omega$\\
+			5 & 9.9445 k$\Omega$\\
+			6 & 9.9475 k$\Omega$\\
+			7 & 9.9566 k$\Omega$\\
+			8 & 9.9571 k$\Omega$\\
+			9 & 9.9556 k$\Omega$\\
+			10 & 9.9499 k$\Omega$\\
+			11 & 9.9645 k$\Omega$\\
+			12 & 9.9632 k$\Omega$\\
+			13 & 9.9512 k$\Omega$\\
+			14 & 9.9515 k$\Omega$\\
+			15 & 9.9562 k$\Omega$\\
+			16 & 9.9518 k$\Omega$\\
+        	\end{tabular}
+		\caption{Resistance values in chip resistor as measured by the Keithley 2400 SourceMeter.}
+		\label{tab:resistor_vals}
+	\end{table}
+	The voltage divider that was used was comprised of two resistors in series with each other, making a voltage divider ratio of $1/2$. Below is the voltage divider transfer characteristic as measured.
+	\begin{figure}[H]
+ 		\centering
+   		\includegraphics[width=\linewidth]{../../lab_code/matlab/Lab1/exp2_plot.pdf}
+   		\caption{Voltage transfer characteristic of voltage divider circuit.}
+		\label{fig:exp2_plot}
+    	\end{figure}
 	\subsection{Analysis}
 	% Anika - How does the actual divider ratio compare to the theoretical one?
 	\subsection{Discussion}
@@ -110,29 +144,6 @@
 	% Henry - Do these currents vary with position as you expect?
 	\subsection{Discussion}
 	% Elias - Do these currents vary with position as you expect?
-    \begin{table}
-        \centering
-        \begin{tabular}{ccc}
-            1 & 9.9724 k$\Omega$\\
-            2 & 9.9661 k$\Omega$\\
-            3 & 9.9465 k$\Omega$\\
-            4 & 9.9510 k$\Omega$\\
-            5 & 9.9445 k$\Omega$\\
-            6 & 9.9475 k$\Omega$\\
-            7 & 9.9566 k$\Omega$\\
-            8 & 9.9571 k$\Omega$\\
-            9 & 9.9556 k$\Omega$\\
-            10 & 9.9499 k$\Omega$\\
-            11 & 9.9645 k$\Omega$\\
-            12 & 9.9632 k$\Omega$\\
-            13 & 9.9512 k$\Omega$\\
-            14 & 9.9515 k$\Omega$\\
-            15 & 9.9562 k$\Omega$\\
-            16 & 9.9518 k$\Omega$\\
-        \end{tabular}
-        \caption{Caption}
-        \label{tab:placeholder}
-    \end{table}
 
 %----------------------------------------------------------
 
