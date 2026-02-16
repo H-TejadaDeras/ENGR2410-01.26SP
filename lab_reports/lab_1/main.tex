@@ -132,15 +132,42 @@
    		\caption{Voltage transfer characteristic of voltage divider circuit.}
 		\label{fig:exp2_plot}
     	\end{figure}
-	\subsection{Analysis}
-	For two equal resistors in series, the theoretical voltage divider ratio is $R_1/(R_1 + R_2) = 1/2$. 
-	However, as Table~\ref{tab:resistor_vals} shows, the resistors had some variation.
+\subsection{Analysis} % Elias
+For two resistors $R_1$ and $R_2$ connected in series as a voltage divider, the divider ratio is
+\[
+H \;=\; \frac{V_{\text{out}}}{V_{\text{in}}}
+= \frac{R_2}{R_1 + R_2}.
+\]
+If the two resistors are equal ($R_1 \approx R_2$), the ideal divider ratio is
+\[
+H_{\text{ideal}} = \frac{1}{2} = 0.5.
+\]
+From the resistance measurements, shown in Figure~\ref{fig:exp2_plot}, the first resistor array had an average resistance of
+$9.9552~\text{k}\Omega$ with a standard deviation of $0.00991~\text{k}\Omega$. This means that the first chip had a variation of approximately $0.10\%$.  
+The second array had an average resistance of $9.9555~\text{k}\Omega$ with a standard deviation of
+$0.00561~\text{k}\Omega$, or $0.056\%$.  
+Both of these values are much smaller than the $\pm 2\%$ tolerance of the resistors.
+The voltage divider was made using two resistors from the same chip to minimize mismatch. A linear fit of $V_{\text{out}}$ versus $V_{\text{in}}$ gave a measured divider ratio
+\[
+H_{\text{measured}} = 0.4996.
+\]
+The deviation from the ideal value is
+\[
+\Delta H = 0.4996 - 0.5 = -0.0004,
+\]
+which is an error of
+\[
+\frac{|\Delta H|}{0.5} \times 100\% = 0.08\%.
+\]
+This error is much smaller than the tolerance of the resistors and is similar to what we measured the resistor-to-resistor variation to be within a single chip.
 
+\subsection{Discussion} % Elias - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
+The resistance data show that the Bourns resistor arrays are well matched between resistors on the same chip. 
+Although the absolute resistance of each array is specified only to $\pm 2\%$, 
+the measured spread within each chip was below $0.1\%$. 
+This is an advantage of integrated resistor arrays. While the absolute values may vary, the ratios 
+between resistors are highly consistent.
 
-	\subsection{Discussion}
-	% Elias - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
-	tmp below ...
-	Within a single chip, the standard deviation of the resistance between the isolated resistors was about 0.56\% with a range of 0.73. This is within the $\pm$2\% tolerance of the chip.
 
 \section{Experiment 3: Resistive Current Division}
 	\subsection{Results}
