@@ -66,7 +66,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp1_diagram.pdf}
-		\caption{The schematic for the setup we used in Experiment One.}\label{fig:exp1_plot}
+		\caption{The schematic for the setup we used in Experiment One.}\label{fig:exp1_diag}
 	\end{figure}
 	\subsection{Results}
 	% Elias - Make a plot showing both the measured data (as individual points) and the theoretical fit (as a solid line) along with the extracted resistance value.
@@ -74,7 +74,7 @@
     Keithley 2400 SourceMeter to measure the resistance of the resistor and found it to be 1.48377 k$\Omega$. 
     For our third method, we used the SMU to measure the current through the resistor at different voltages and plotted the current-voltage characteristic of the resistor. 
     We then used MATLAB's polyfit() function to create a linear fit on this data. We found the resistance value from the slope of the line, which was approximately 1.485
-     k$\Omega$. The data with fit can be seen in Figure~\ref{fig:exp2_plot}.
+     k$\Omega$. The data with fit can be seen in Figure~\ref{fig:exp1_plot}.
 
 	\begin{figure}[h]
  		\centering
@@ -96,7 +96,7 @@
 	\begin{figure}[h]
  		\centering
    		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp2_diagram.pdf}
-   		\caption{The schematic for the setup we used in Experiment Two.}\label{fig:exp1_plot}
+   		\caption{The schematic for the setup we used in Experiment Two.}\label{fig:exp2_diag}
     	\end{figure}
 	\subsection{Results}
 	% Henry - Within a single chip, how do the resistances match each other compared to the ±2% tolerance specified for their absolute values? How do the resistance values on one chip compare to those on the second chip? In your report, include a table showing all of the resistor values from both chips. Make a plot showing both the measured data and the theoretical fit along with the extracted value of the divider ratio.
@@ -125,48 +125,48 @@
 		\caption{Resistance values in chip resistor as measured by the Keithley 2400 SourceMeter.}
 		\label{tab:resistor_vals}
 	\end{table}
-	The voltage divider that was used was comprised of two resistors in series with each other, making a voltage divider ratio of $1/2$. Figure~\ref{fig:exp2_plot} shows the voltage divider transfer characteristic as measured.
+	The voltage divider that was used was comprised of two resistors in series with each other, making a voltage divider ratio of $1/2$. Figure~\ref{tab:resistor_vals} shows the voltage divider transfer characteristic as measured.
 	\begin{figure}[H]
  		\centering
    		\includegraphics[width=0.7\linewidth]{../../lab_code/matlab/Lab1/exp2_plot.pdf}
    		\caption{Voltage transfer characteristic of voltage divider circuit.}
 		\label{fig:exp2_plot}
     	\end{figure}
-\subsection{Analysis} % Elias
-For two resistors $R_1$ and $R_2$ connected in series as a voltage divider, the divider ratio is
-\[
-H \;=\; \frac{V_{\text{out}}}{V_{\text{in}}}
-= \frac{R_2}{R_1 + R_2}.
-\]
-If the two resistors are equal ($R_1 \approx R_2$), the ideal divider ratio is
-\[
-H_{\text{ideal}} = \frac{1}{2} = 0.5.
-\]
-From the resistance measurements, shown in Figure~\ref{fig:exp2_plot}, the first resistor array had an average resistance of
-$9.9552~\text{k}\Omega$ with a standard deviation of $0.00991~\text{k}\Omega$. This means that the first chip had a variation of approximately $0.10\%$.  
-The second array had an average resistance of $9.9555~\text{k}\Omega$ with a standard deviation of
-$0.00561~\text{k}\Omega$, or $0.056\%$.  
-Both of these values are much smaller than the $\pm 2\%$ tolerance of the resistors.
-The voltage divider was made using two resistors from the same chip to minimize mismatch. A linear fit of $V_{\text{out}}$ versus $V_{\text{in}}$ gave a measured divider ratio
-\[
-H_{\text{measured}} = 0.4996.
-\]
-The deviation from the ideal value is
-\[
-\Delta H = 0.4996 - 0.5 = -0.0004,
-\]
-which is an error of
-\[
-\frac{|\Delta H|}{0.5} \times 100\% = 0.08\%.
-\]
-This error is much smaller than the tolerance of the resistors and is similar to what we measured the resistor-to-resistor variation to be within a single chip.
-
-\subsection{Discussion} % Elias - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
-The resistance data show that the Bourns resistor arrays are well matched between resistors on the same chip. 
-Although the absolute resistance of each array is specified only to $\pm 2\%$, 
-the measured spread within each chip was below $0.1\%$. 
-This is an advantage of integrated resistor arrays. While the absolute values may vary, the ratios 
-between resistors are highly consistent.
+	\subsection{Analysis} % Elias - How does the actual divider ratio compare to the theoretical one?
+	For two resistors $R_1$ and $R_2$ connected in series as a voltage divider, the divider ratio is
+	\[
+	H \;=\; \frac{V_{\text{out}}}{V_{\text{in}}}
+	= \frac{R_2}{R_1 + R_2}.
+	\]
+	If the two resistors are equal ($R_1 \approx R_2$), the ideal divider ratio is
+	\[
+	H_{\text{ideal}} = \frac{1}{2} = 0.5.
+	\]
+	From the resistance measurements, shown in Figure~\ref{fig:exp2_plot}, the first resistor array had an average resistance of
+	$9.9552~\text{k}\Omega$ with a standard deviation of $0.00991~\text{k}\Omega$. This means that the first chip had a variation of approximately $0.10\%$.  
+	The second array had an average resistance of $9.9555~\text{k}\Omega$ with a standard deviation of
+	$0.00561~\text{k}\Omega$, or $0.056\%$.  
+	Both of these values are much smaller than the $\pm 2\%$ tolerance of the resistors.
+	The voltage divider was made using two resistors from the same chip to minimize mismatch. A linear fit of $V_{\text{out}}$ versus $V_{\text{in}}$ gave a measured divider ratio
+	\[
+	H_{\text{measured}} = 0.4996.
+	\]
+	The deviation from the ideal value is
+	\[
+	\Delta H = 0.4996 - 0.5 = -0.0004,
+	\]
+	which is an error of
+	\[
+	\frac{|\Delta H|}{0.5} \times 100\% = 0.08\%.
+	\]
+	This error is much smaller than the tolerance of the resistors and is similar to what we measured the resistor-to-resistor variation to be within a single chip.
+	
+	\subsection{Discussion} % Elias - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
+	The resistance data show that the Bourns resistor arrays are well matched between resistors on the same chip. 
+	Although the absolute resistance of each array is specified only to $\pm 2\%$, 
+	the measured spread within each chip was below $0.1\%$. 
+	This is an advantage of integrated resistor arrays. While the absolute values may vary, the ratios 
+	between resistors are highly consistent.
 
 
 \section{Experiment 3: Resistive Current Division}
@@ -174,7 +174,7 @@ between resistors are highly consistent.
     \begin{figure}[H]
 		\centering
 		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp3_diagram.pdf}
-		\caption{The schematic for the setup we used in Experiment Three.}\label{fig:exp3_plot}
+		\caption{The schematic for the setup we used in Experiment Three.}\label{fig:exp3_diag}
 	\end{figure}
     For this expiriment, we used one channel of the SMU to apply a source current and another channel of the SMU to measure to the current through one of the branches of the current divider as noted by the above circuit diagram. We used the SMU to measure the current through the current divider at different input currents and plotted them in a graph. We then used MATLAB to create a linear fit on this data. We found the current divider ratio from the slope of the line, which was approximately 0.4988. The data with fit can be seen in Figure~\ref{fig:exp3_plot}.
     \begin{figure}[H]
@@ -196,12 +196,15 @@ This value is very close to the theoretical ratio of 0.5, corresponding to a rel
 
 	\subsection{Discussion}
 	% Henry - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
+	The resistance from the resistor array that we used for this experiment was on average 9.9552125 k$\Omega$ with a standard deviation of 0.009909 k$\Omega$. If we make a resistive current divider using resistors with the average value of the resistances and adding or subtracting a standard deviation from it, we get a current divider ratio that is very close to the one we measured. 
+	\[\frac{I_{\text{out}}}{I_{\text{in}}}=\frac{R_{\text{avg}}+\sigma}{(R_{\text{avg}}-\sigma)+(R_{\text{avg}}+\sigma)}=\dots=0.4995\]
+	This means that the discrepancy with the resistance calues matches the discrepancy observed through the current divider ratio. Although the calculated value should encompass most combinations of resistors using the resistor array chip, there are resistances outside this range and explain why our measured divider ratio is slightly off from the ratio calculated.
 
 \section{Experiment 4: R-2R Ladder Network}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../diagrams/lab1_exp4_diagram.pdf}
-	\caption{The schematic for the setup we used in Experiment Four.}\label{fig:exp1_plot}
+	\caption{The schematic for the setup we used in Experiment Four.}\label{fig:exp4_plot}
 \end{figure}
 	\subsection{Results}
 	% Anika - Enter your measurements into MATLAB and make a semilog plot of current as a function of position for both measurements on a single graph along with appropriate theoretical expected values.
