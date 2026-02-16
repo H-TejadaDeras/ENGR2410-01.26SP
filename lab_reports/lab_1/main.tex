@@ -219,7 +219,10 @@ This value is very close to the theoretical ratio of 0.5, corresponding to a rel
 	\[I_{n}=\frac{1}{2^{n+1}}\cdot\frac{V_{\text{in}}}{R}\]
 	\subsection{Discussion}
 	% Elias - Do these currents vary with position as you expect?
-
+The measured branch currents generally follow the exponential decrease we predicted for an ideal R-2R ladder network. The percent error between the measured and theoretical currents was $7.6494\%$ for an input voltage of $V_{\text{in}} = 0.2\,\text{V}$, $1.1561\%$ for $V_{\text{in}} = 0.6\,\text{V}$, and $0.3872\%$ at $V_{\text{in}} = 1\,\text{V}$.
+The larger percent error at the lower input voltage is likely due to the smaller signal levels. At lower voltages, the measured branch currents are more affected by resolution limits and electrical noise. 
+As the input voltage increased, the branch currents scaled proportionally, improving the signal-to-noise ratio of the measurements and resulting in significantly lower error. This is consistent with the decrease in percent error from $7.6494\%$ at $0.2\,\text{V}$ to $0.3872\%$ at $1\,\text{V}$.
+Overall, the decreasing percent error with increasing input voltage indicates that the R-2R ladder network behaves as expected and closely matches theoretical predictions. 
 %----------------------------------------------------------
 
 \end{document}
