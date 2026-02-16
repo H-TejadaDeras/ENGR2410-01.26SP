@@ -63,12 +63,13 @@
 %----------------------------------------------------------
 
 \section{Experiment 1: Resistance Measurement}
+
+	\subsection{Results}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp1_diagram.pdf}
 		\caption{The schematic for the setup we used in Experiment One.}\label{fig:exp1_diag}
 	\end{figure}
-	\subsection{Results}
 	% Elias - Make a plot showing both the measured data (as individual points) and the theoretical fit (as a solid line) along with the extracted resistance value.
 	For our first method of measuring our resistor, we looked at the color code on the resistor which showed that it had a resistance of 1.5 k$\Omega$ with a 5\% tolerance. For our second method, we used the
     Keithley 2400 SourceMeter to measure the resistance of the resistor and found it to be 1.48377 k$\Omega$. 
@@ -93,12 +94,13 @@
 	% Color Code Resistance Value: 1.5 k$\Omega$ with a 5\% tolerance. Keithley Measured Resistance Value: 1.48377 k$\Omega$
 
 \section{Experiment 2: Resistive Voltage Division}
+
+	\subsection{Results}
 	\begin{figure}[h]
  		\centering
    		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp2_diagram.pdf}
    		\caption{The schematic for the setup we used in Experiment Two.}\label{fig:exp2_diag}
-    	\end{figure}
-	\subsection{Results}
+    \end{figure}
 	% Henry - Within a single chip, how do the resistances match each other compared to the ±2% tolerance specified for their absolute values? How do the resistance values on one chip compare to those on the second chip? In your report, include a table showing all of the resistor values from both chips. Make a plot showing both the measured data and the theoretical fit along with the extracted value of the divider ratio.
 	The following data was measured from two Bourns 4116R-1-103LF DIP chip resistors, in which resistor measurements 1-8 are from the first chip and measurements 9-16 are from the other chip. The measurements were made using a Keithley 2400 SourceMeter. The average resistance of the first chip was 9.9552125 k$\Omega$ and was 9.9554875 k$\Omega$ for the second chip. The standard deviation for the first chip was 0.009909 k$\Omega$ and 0.005610 k$\Omega$ for the second chip. While there was more variation in the first chip than in the second one, the variation was still within the $\pm$2\% tolerance.
 	\begin{table}[H]
@@ -170,12 +172,12 @@
 
 
 \section{Experiment 3: Resistive Current Division}
-    \begin{figure}[H]
+	\subsection{Results}
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.35\linewidth]{../diagrams/lab1_exp3_diagram.pdf}
-		\caption{The schematic for the setup we used in Experiment Three.}\label{fig:exp3_diag}
+	\caption{The schematic for the setup we used in Experiment Three.}\label{fig:exp3_diag}
 	\end{figure}
-	\subsection{Results}
     For this experiment, we used one channel of the SMU to apply a source current and another channel of the SMU to measure to the current through one of the branches of the current divider as noted by the above circuit diagram. We used the SMU to measure the current through the current divider at different input currents and plotted them in a graph. We then used MATLAB to create a linear fit on this data. We found the current divider ratio from the slope of the line, which was approximately 0.4988. The data with fit can be seen in Figure~\ref{fig:exp3_plot}.
     \begin{figure}[H]
     \centering
@@ -201,12 +203,13 @@ This value is very close to the theoretical ratio of 0.5, corresponding to a rel
 	This means that the discrepancy with the resistance calues matches the discrepancy observed through the current divider ratio. Although the calculated value should encompass most combinations of resistors using the resistor array chip, there are resistances outside this range and explain why our measured divider ratio is slightly off from the ratio calculated.
 
 \section{Experiment 4: R-2R Ladder Network}
+
+	\subsection{Results}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../diagrams/lab1_exp4_diagram.pdf}
 	\caption{The schematic for the setup we used in Experiment Four.}\label{fig:exp4_plot}
 \end{figure}
-	\subsection{Results}
 	For this experiment, we used one channel of the SMU to apply a source voltage and another channel to sequentially measure the current through each of the 4 branches of the R-2R ladder network as noted by the above circuit diagram.  We then used MATLAB to create a linear fit on this data. We then plotted the theoretical and measured currents as a function of position in Figure~\ref{fig:exp4_plot}.
 	\begin{figure}[H]
     \centering
@@ -221,8 +224,8 @@ This value is very close to the theoretical ratio of 0.5, corresponding to a rel
 	% Elias - Do these currents vary with position as you expect?
 The measured branch currents generally follow the exponential decrease we predicted for an ideal R-2R ladder network. The percent error between the measured and theoretical currents was $7.6494\%$ for an input voltage of $V_{\text{in}} = 0.2\,\text{V}$, $1.1561\%$ for $V_{\text{in}} = 0.6\,\text{V}$, and $0.3872\%$ at $V_{\text{in}} = 1\,\text{V}$.
 The larger percent error at the lower input voltage is likely due to the smaller signal levels. At lower voltages, the measured branch currents are more affected by resolution limits and electrical noise. 
-As the input voltage increased, the branch currents scaled proportionally, improving the signal-to-noise ratio of the measurements and resulting in significantly lower error. This is consistent with the decrease in percent error from $7.6494\%$ at $0.2\,\text{V}$ to $0.3872\%$ at $1\,\text{V}$.
-Overall, the decreasing percent error with increasing input voltage indicates that the R-2R ladder network behaves as expected and closely matches theoretical predictions. 
+As the input voltage increased, the branch currents scaled proportionally, improving the signal-to-noise ratio of the measurements and giving significantly lower error. This is consistent with the decrease in percent error from $7.6494\%$ at $0.2\,\text{V}$ to $0.3872\%$ at $1\,\text{V}$.
+Overall, the decrease in error with the increase in input voltage shows that the R-2R ladder network worked as predicted. 
 %----------------------------------------------------------
 
 \end{document}
