@@ -183,8 +183,17 @@ between resistors are highly consistent.
     \caption{ Input and measured current as measured by the SMU, with a linear fit used to extract the Current Divider Ratio from the SMU data.}\label{fig:exp3_plot}
     \end{figure}
     
-	\subsection{Analysis}
+	\subsection{Analysis} 
 	% Elias - How does the actual divider ratio compare to the theoretical one?
+For an ideal two-way resistive current divider consisting of two equal resistances, the theoretical divider ratio is
+\begin{equation}
+\frac{I_{\text{out}}}{I_{\text{in}}} = \frac{R_2}{R_1 + R_2}.
+\end{equation}
+From the linear fit of the measured output current as a function of input current, 
+the slope of the best-fit line was found to be approximately 0.4988, 
+which represents the experimentally measured current divider ratio. 
+This value is very close to the theoretical ratio of 0.5, corresponding to a relative error of approximately 0.24\%.
+
 	\subsection{Discussion}
 	% Henry - Is this discrepancy consistent with the level of resistance mismatch that you observed in your resistor array?
 
