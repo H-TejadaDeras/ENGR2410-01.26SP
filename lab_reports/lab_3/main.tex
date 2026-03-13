@@ -88,8 +88,20 @@
    		\includegraphics[width=0.6\linewidth]{../diagrams/lab3_c3.pdf}
    		\caption{The schematic for the experimental setups used in Experiment 3. An R values of 1k$\Omega$ was used.}\label{fig:exp3_diag}
     \end{figure}
+	After connecting the diode-connected transistor in the emitter-follower configuration as shown in (circuit digram ref), we measured the voltage transfer characteristic (VTC) of the circuit by sweeping the input voltage (Vin) and recording the corresponding output voltage (Vout). The VTC was plotted as Vout versus Vin, and a theoretical fit was also included for comparison. The plot is shown in Figure \ref{fig:exp3_plot}.\\
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{../diagrams/lab3_exp3_plt1.pdf}
+        \caption{plot showing the emitter-follower’s voltage transfer characteristic (VTC), which is a plot of Vout as a function of Vin, along with a theoreticalfit. }\label{fig:exp3_plot1}
+    \end{figure} 
 	\subsection{Analysis}
+	% What is the difference between Vin and Vout for this circuit? What determines this voltage difference?
+	The difference between Vin and Vout remains close to constant as shown by the linear portion of the VTC. The average difference can be calculated to be 0.6799V. The difference between Vin and Vout in the emitter-follower configuration is determined by the base-emitter voltage of the diode connected transistor. This is determined by the current flowing through the transistor and the characteristics of the transistor itself. 
+	
 	\subsection{Discussion}
+	% What is the incremental voltage gain of the emitter follower?
+	The incremental voltage gain (Av) of the emitter follower can be calculated using the formula: Av = dVout/dVin. From the VTC plot, we can determine the slope of the curve at different points to find the incremental voltage gain which was 0.9802. The gain of the emitter follower is expected to be close to 1. However, due to the presence of the diode-connected transistor and the slight error in the smu, the actual gain is slightly less than 1.
+
 \section{Inverter Voltage Transfer Characteristics}
 	\subsection{Results}
 	\begin{figure}[H]
